@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<properties>
+	<property name="database-connection">
+		<database-verbose>mysql</database-verbose>
+		<database-name>tigershan_domen</database-name>
+		<user>root</user>
+		<password>root</password>
+		<host>localhost</host>
+		<charset>utf8</charset>	
+	</property>
+</properties>
