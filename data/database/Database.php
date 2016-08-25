@@ -42,7 +42,7 @@ class Database extends PDO {
 	public static function getInstance() {
 		if (! isset ( self::$instance )) {
 			try {
-				self::$instance = new Database ();
+				self::$instance = new Database();
 			} catch ( PDOException $e ) {
 				echo $e;
 			}
