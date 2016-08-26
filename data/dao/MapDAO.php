@@ -53,13 +53,13 @@ class MapDAO {
     return $maps;
   }
   //TODO retourner succes ou echec
-  public static function update(SignEntity $signEntity)
+  public static function update(MapEntity $mapEntity)
   {
   	$db = Database::getInstance();
     $q = $db->prepare('UPDATE map SET coord_x = :coord_x, coord_y = :coord_y WHERE id = :id');
-    $q->bindValue(':coord_x', $signEntity->getCoord_X());
-    $q->bindValue(':coord_y', $signEntity->getCoord_Y());
-    $q->bindValue(':id', $signEntity->getId(), PDO::PARAM_INT);
+    $q->bindValue(':coord_x', $mapEntity->getCoord_X());
+    $q->bindValue(':coord_y', $mapEntity->getCoord_Y());
+    $q->bindValue(':id', $mapEntity->getId(), PDO::PARAM_INT);
     $q->execute();
   }
 }
