@@ -58,6 +58,7 @@ class MapDAO {
   	$db = Database::getInstance();
     $q = $db->prepare('UPDATE map SET coord_x = :coord_x, coord_y = :coord_y WHERE id = :id');
     $q->bindValue(':coord_x', $signEntity->getCoord_X());
+    $q->bindValue(':coord_y', $signEntity->getCoord_Y());
     $q->bindValue(':id', $signEntity->getId(), PDO::PARAM_INT);
     $q->execute();
   }
