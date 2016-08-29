@@ -6,6 +6,7 @@ include_once PHP_ROOT.'\data\entity\MapEntity.php';
 use tigershan_domen\data\database\Database;
 use tigershan_domen\data\entity\MapEntity;
 use PDO;
+
 class MapDAO {
   //TODO retourner succes ou echec
   public static function add(MapEntity $mapEntity)
@@ -28,14 +29,13 @@ class MapDAO {
   {
     $id = (int) $id;
     $db = Database::getInstance();
-    $q = $db->prepare('SELECT * FROM sign WHERE id = :id');
+    $q = $db->prepare('SELECT * FROM map WHERE id = :id');
     $q->bindValue(':id', $id, PDO::PARAM_INT);
     $q->execute();
     $data = $q->fetch(PDO::FETCH_ASSOC);
     $mapEntity = new MapEntity();
     if ($data)
-    $mapEntity->hydrate($data);
-    
+    	$mapEntity->hydrate($data); 
     return $mapEntity;
   }
   public static function getList()
