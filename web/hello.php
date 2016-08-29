@@ -10,6 +10,8 @@ include_once PHP_ROOT.'\data\entity\LinkMapSignEntity.php';
 include_once PHP_ROOT.'\data\dao\SignDAO.php';
 include_once PHP_ROOT.'\data\dao\MapDAO.php';
 include_once PHP_ROOT.'\data\dao\MemberDAO.php';
+include_once PHP_ROOT.'\data\dao\LinkMapSignDAO.php';
+
 
 use tigershan_domen\data\database\Database;
 use tigershan_domen\data\entity\MemberEntity;
@@ -19,6 +21,7 @@ use tigershan_domen\data\entity\LinkMapSignEntity;
 use tigershan_domen\data\dao\SignDAO;
 use tigershan_domen\data\dao\MapDAO;
 use tigershan_domen\data\dao\MemberDAO;
+use tigershan_domen\data\dao\LinkMapSignDAO;
 use PDO;
 
 //$bdd = new PDO('mysql:host=localhost;dbname=eplanning;charset=utf8', 'root', 'root');
@@ -68,7 +71,7 @@ echo '<br/>';
 $map2 = new MapEntity();
 $map2->setId(3);
 $map2->setCoord_X(10);
-MapDAO::update($map2);*/
+MapDAO::update($map2);
 
 echo '<br/>';
 echo '<br/>Member<br/>';
@@ -85,4 +88,9 @@ $member2 = new MemberEntity();
 $member2->setId(2);
 $member2->setLogin('Melanie');
 $member2->setPassword('Melanie');
-MemberDAO::update($member2);
+MemberDAO::update($member2);*/
+
+echo '<br/>';
+echo '<br/>LinkMapSign<br/>';
+$getLinkMapSign = LinkMapSignDAO::get(4);
+print_r($getLinkMapSign);

@@ -53,16 +53,25 @@ class LinkMapSignEntity extends GenericEntity
   {
   	$this->setId($data['ID']);
   	$this->map = new MapEntity();
+  	if (isset($data['ID_MAP']))
   	$this->map->setId($data['ID_MAP']);
+  	if (isset($data['COORD_X']))
   	$this->map->setCoord_X($data['COORD_X']);
+  	if (isset($data['COORD_Y']))
   	$this->map->setCoord_Y($data['COORD_Y']);
   	$this->sign = new SignEntity();
+  	if (isset($data['ID_SIGN']))
   	$this->sign->setId($data['ID_SIGN']);
+  	if (isset($data['LABEL']))
   	$this->sign->setLabel($data['LABEL']);
   	$this->member = new MemberEntity();
+  	if (isset($data['ID_MEMBER']))
   	$this->member->setId($data['ID_MEMBER']);
+  	if (isset($data['LOGIN']))
   	$this->member->setLogin($data['LOGIN']);
+  	if (isset($data['PASSWORD']))
   	$this->member->setPassword($data['PASSWORD']);
+  	if (isset($data['ROLE']))
   	$this->member->setRole($data['ROLE']);
   }
   
