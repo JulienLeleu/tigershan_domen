@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes>
+	<route>
+		<url>/</url>
+		<path>/web/webapp/page</path>
+		<security-constraint>
+			<role>0</role>
+		</security-constraint>
+	</route>
+</routes>
